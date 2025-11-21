@@ -16,8 +16,8 @@
 class Election
 {
 public:
-    void addClubs(vector<string> theClubs);
-    void addBots(string botName, vector<int> votesForBot);
+    void addClubs(vector<string>& theClubs);
+    void addBots(string botName, vector<int>& votesForBot);
 
     bool noDataFound() const;
 
