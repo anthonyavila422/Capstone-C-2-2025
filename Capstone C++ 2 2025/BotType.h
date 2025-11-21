@@ -28,6 +28,7 @@ public:
     void printBotInfo() const;
 
     bool operator < (const BotType&) const;
+
 private:
     std::string name;
     std::string ability;

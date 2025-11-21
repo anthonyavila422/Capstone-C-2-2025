@@ -27,6 +27,7 @@ public:
 
     void printAllBotsNames() const;
     void printAllBotsInfo() const;
+
 private:
     std::set<BotType> botList;
 };

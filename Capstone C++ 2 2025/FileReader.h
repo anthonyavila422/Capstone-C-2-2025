@@ -13,7 +13,7 @@
 #include "BotList.h"
 #include "Election.h"
 
-//void readBotData(BotList& botList);
-//void readElectionResults(Election& electionResults);
+void readBotData(BotList& botList);
+void readElectionResults(Election& electionResults);
 
 #endif
