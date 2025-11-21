@@ -18,7 +18,7 @@ using namespace std;
 
 int main()
 {
-    cout << "===== PHASE 1: Testing BotType =====\n\n";
+    cout << "===== PHASE 1: TestingTesting BotType =====\n\n";
 
     //Test default constructor, BotType::printBotInfo().
     BotType bot1;
