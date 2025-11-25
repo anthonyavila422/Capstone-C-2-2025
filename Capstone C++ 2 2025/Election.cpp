@@ -42,6 +42,12 @@ void Election::printBotVotesFromClub(string botName, string clubName) const
     auto iterClubName = find(clubs.begin(), clubs.end(), clubName);
     auto iterBotName = electoralVotes.find(botName);
 
+    int index = distance(clubs.begin(), iterClubName);
+
+    cout << "Votes for bot " << botName <<
+        " from club " << clubName << ": "
+        << iterBotName->second[index];
+
 
 }
 
@@ -49,18 +55,19 @@ void Election::printBotTotalVotes(string botName) const
 {
     auto iterBotName = electoralVotes.find(botName);
     int total = 0;
-    cout << accumulate(iterBotName->second.begin(), iterBotName->second.end(), total)
+    cout << "Total votes for bot: " << botName << " is: " <<
+        accumulate(iterBotName->second.begin(), iterBotName->second.end(), total)
         << endl;
 }
 
 void Election::printWinner() const
 {
-    int currentTotal, finalTotal = 0;
+    int currentTotal = 0, finalTotal = 0;
     string currentName;
 
     for (auto& i : electoralVotes)
     {
-        accumulate(i.second.begin(), i.second.end(), currentTotal);
+        currentTotal = accumulate(i.second.begin(), i.second.end(), 0);
         if (currentTotal > finalTotal)
         {
             finalTotal = currentTotal;
@@ -68,9 +75,23 @@ void Election::printWinner() const
         }
         currentTotal = 0;
     }
+    cout << "Winner is: " << currentName << " with " 
+        << finalTotal << " votes." << endl;
 }
 
 void Election::printFinalResults() const
 {
+    for (auto& i : electoralVotes)
+    {
+        cout << "Name: " << i.first
+            << " | Club-by-club votes: ";
+        for (auto& j : i.second)
+        {
+            cout << j << " ";
+        }
 
+        cout << "| Total votes: ";
+        int totalVotes = accumulate(i.second.begin(), i.second.end(), 0);
+        cout << totalVotes << endl;
+    }
 }

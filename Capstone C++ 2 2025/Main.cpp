@@ -87,40 +87,58 @@ int main()
     cout << "===== PHASE 3: Testing FileReader with bots.csv =====\n\n";
 
     // Create a BotList object.
-    // Your code here...
+    BotList fileBotList;
 
     // Test BotList::getCount
-    // Your code here...
+    fileBotList.getCount();
 
     // Call readBotData
-    // Your code here...
+    readBotData(fileBotList);
 
     // After calling readBotData, verify:
     // fileBotList.getCount() == number of bots in bots.csv
     // AND printed bot info matches the file data exactly.
-    // Your code here...
+    cout << "Count after readBotData: " << fileBotList.getCount() << endl;
+    cout << "Printed bot info: ";
+    fileBotList.printAllBotsInfo();
+    cout << endl;
 
     cout << "===== PHASE 4: Testing Election and FileReader with votes.csv =====\n\n";
 
     // Create an Election object.
-    // Your code here...
+    Election testElection;
 
     // Before reading any data, test BotList::noDataFound
-    // Your code here...
+    cout << "Test for noDataFound before file read: " << testElection.noDataFound() << endl;
 
     // Test readElectionResults
-    // Your code here...
+    readElectionResults(testElection);
 
     // Test BotList::noDataFound
-    // Your code here...
-
+    cout << "Test noDataFound after file read: " << testElection.noDataFound() << endl;
+    cout << endl;
     // Test BotList::printAllBots
-    // Your code here...
+    cout << "Test printAllBots: " << endl;
+    testElection.printAllBots();
+    cout << endl;
 
     cout << "===== PHASE 5: Testing Election menu operations with specific bot/club =====\n\n";
 
     // Choose an existing bot name and club name and test all print function of the Election class
-    // Your code here...
+    cout << "Test printBotVotesFromClub: " << endl;
+    testElection.printBotVotesFromClub("PixelPilot", "AeroGrp");
+    cout << endl << endl;
+    
+    cout << "Test printBotTotalVotes: " << endl;
+    testElection.printBotTotalVotes("MetaMender");
+    cout << endl;
+    
+    cout << "Test printFinalResults: " << endl;
+    testElection.printFinalResults();
+    cout << endl;
+
+    cout << "Test printWinner: " << endl;
+    testElection.printWinner();
 
     cout << "===== All tests completed. =====\n";
 
