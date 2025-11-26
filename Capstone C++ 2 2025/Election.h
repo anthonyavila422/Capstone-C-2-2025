@@ -14,6 +14,9 @@
 #include <map>
 #include <string>
 
+extern const int NUM_CLUBS;
+extern const std::vector<std::string> CLUB_ABREVIATIONS;
+
 class Election
 {
 public:
@@ -27,6 +30,7 @@ public:
     void printBotTotalVotes(std::string botName) const;
     void printWinner() const;
     void printFinalResults() const;
+    void printAllClubs() const;
 
 private:
     std::vector<std::string> clubs;

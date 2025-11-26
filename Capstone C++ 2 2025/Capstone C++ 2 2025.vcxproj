@@ -129,12 +129,14 @@
     <ClInclude Include="BotType.h" />
     <ClInclude Include="Election.h" />
     <ClInclude Include="FileReader.h" />
+    <ClInclude Include="Interface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BotList.cpp" />
     <ClCompile Include="BotType.cpp" />
     <ClCompile Include="Election.cpp" />
     <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

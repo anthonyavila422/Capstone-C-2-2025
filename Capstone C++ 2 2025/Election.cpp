@@ -14,6 +14,10 @@
 
 using namespace std;
 
+const int NUM_CLUBS = 10;
+const vector<string> CLUB_ABBREVIATIONS = 
+    {"NL", "RG", "EC", "AE", "CH", "NC", "AX", "BL", "CY", "DL"};
+
 void Election::addClubs(vector<string>& theClubs)
 {
     clubs = theClubs;
@@ -94,4 +98,9 @@ void Election::printFinalResults() const
         int totalVotes = accumulate(i.second.begin(), i.second.end(), 0);
         cout << totalVotes << endl;
     }
+}
+
+void Election::printAllClubs() const
+{
+
 }

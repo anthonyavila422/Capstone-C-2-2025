@@ -25,18 +25,16 @@ int BotList::getCount() const
 
 bool BotList::getBotByName(string name, BotType& outBot) const
 {
-    bool result = false;
+    BotType tempBot(name, "", "");
 
-    for (auto& i : botList)
+    auto iterBotFound = botList.find(tempBot);
+    if (iterBotFound != botList.end())
     {
-        if (i.getBotName() == name)
-        {
-            result = true;
-            outBot = i;
-        }
+        outBot = tempBot;
+        return true;
     }
-
-    return result;
+    else
+        return false;
 }
 
 bool BotList::isEmpty() const
