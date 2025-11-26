@@ -54,6 +54,7 @@ void BotList::printAllBotsInfo() const
 {
     for (auto& i : botList)
     {
-        cout << "Name: " << i.getBotName() << " Ability: " << i.getBotAbility() << " Trait: " << i.getBotTrait() << endl;
+        cout << "Name: " << i.getBotName() << " Ability: " 
+            << i.getBotAbility() << " Trait: " << i.getBotTrait() << endl;
     }
 }

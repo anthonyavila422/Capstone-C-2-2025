@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
     BotList myList;
-    //readBotData(myList);
+    readBotData(myList);
 
     Election myElection;
     readElectionResults(myElection);

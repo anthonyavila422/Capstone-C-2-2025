@@ -48,8 +48,8 @@ void Election::printBotVotesFromClub(string botName, string clubName) const
 
     int index = distance(clubs.begin(), iterClubName);
 
-    cout << "Votes for bot " << botName <<
-        " from club " << clubName << ": "
+    cout << "Votes for bot " << botName 
+        << " from club " << clubName << ": "
         << iterBotName->second[index];
 
 
@@ -59,9 +59,9 @@ void Election::printBotTotalVotes(string botName) const
 {
     auto iterBotName = electoralVotes.find(botName);
     int total = 0;
-    cout << "Total votes for bot: " << botName << " is: " <<
-        accumulate(iterBotName->second.begin(), iterBotName->second.end(), total)
-        << endl;
+    cout << "Total votes for bot: " << botName << " is: " 
+        << accumulate(iterBotName->second.begin(), 
+            iterBotName->second.end(), total) << endl;
 }
 
 void Election::printWinner() const
