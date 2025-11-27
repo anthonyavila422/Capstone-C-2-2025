@@ -15,7 +15,7 @@
 #include <string>
 
 extern const int NUM_CLUBS;
-extern const std::vector<std::string> CLUB_ABREVIATIONS;
+extern const std::vector<std::string> CLUB_ABBREVIATIONS;
 
 class Election
 {

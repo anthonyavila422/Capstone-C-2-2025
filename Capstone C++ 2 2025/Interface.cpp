@@ -40,7 +40,10 @@ void displayMenu()
 // Definition function exitMessage
 void exitMessage()
 {
-	// Your code here...
+	cout << endl << string(45, '-') << endl
+		<< "  Thanks for running the STEM Bot Election!" << endl
+		<< "   May the best bot serve wisely. Goodbye!" << endl
+		<< string(45, '-') << endl;
 }
 
 
@@ -58,7 +61,7 @@ void processMenu(const BotList& botList, const Election& election)
 	int sentinelVal = 1;
 	while (sentinelVal != 0)
 	{
-		int option;
+		int option = 0;
 		cout << "\nEnter your choice: ";
 		cin >> option;
 
@@ -74,6 +77,7 @@ void processMenu(const BotList& botList, const Election& election)
 					{
 						botList.printAllBotsInfo();
 					}
+					break;
 				}
 			case 2:
 				{
@@ -85,6 +89,7 @@ void processMenu(const BotList& botList, const Election& election)
 					{
 						election.printAllClubs();
 					}
+					break;
 				}
 			case 3:
 				{
@@ -101,25 +106,57 @@ void processMenu(const BotList& botList, const Election& election)
 						cout << "Enter club's name: ";
 						string clubName;
 						cin >> clubName;
+
+						election.printBotVotesFromClub(botName, clubName);
 					}
+					break;
 				}
 			case 4:
 				{
-					
+					if (election.noDataFound())
+					{
+						noDataMessage();
+					}
+					else
+					{
+						cout << "\nEnter bot's name: ";
+						string botName;
+						cin >> botName;
+
+						election.printBotTotalVotes(botName);
+					}
+					break;
 				}
 			case 5:
 				{
-					
+					if (election.noDataFound())
+					{
+						noDataMessage();
+					}
+					else
+					{
+						election.printWinner();
+					}
+					break;
 				}
 			case 6:
 				{
-					
-				}
-			case 7:
-				{
-					
+					if (election.noDataFound())
+					{
+						noDataMessage();
+					}
+					else
+					{
+						election.printFinalResults();
+					}
+					break;
 				}
 		}
-
+		if (option == 7)
+		{
+			exitMessage();
+			sentinelVal = 0;
+		}
+		//system("Pause");
 	}
 }

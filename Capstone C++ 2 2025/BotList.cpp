@@ -52,9 +52,12 @@ void BotList::printAllBotsNames() const
 
 void BotList::printAllBotsInfo() const
 {
+    cout << "\n\tBOT NAME\t(ability, trait)" << endl
+        << "\t" << string(33, '-') << endl;
+
     for (auto& i : botList)
     {
-        cout << "Name: " << i.getBotName() << " Ability: " 
-            << i.getBotAbility() << " Trait: " << i.getBotTrait() << endl;
+        cout << "\t" << i.getBotName() << "\t(" << i.getBotAbility() 
+            << ", " << i.getBotTrait() << ")" << endl;
     }
 }

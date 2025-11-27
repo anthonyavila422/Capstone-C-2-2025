@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <numeric>
+#include <iomanip>
 
 using namespace std;
 
@@ -48,9 +49,9 @@ void Election::printBotVotesFromClub(string botName, string clubName) const
 
     int index = distance(clubs.begin(), iterClubName);
 
-    cout << "Votes for bot " << botName 
-        << " from club " << clubName << ": "
-        << iterBotName->second[index];
+    cout << "\n\t" << botName
+        << " received " << iterBotName->second[index] << " vote(s) from "
+        << clubName << "." << endl;
 
 
 }
@@ -59,9 +60,9 @@ void Election::printBotTotalVotes(string botName) const
 {
     auto iterBotName = electoralVotes.find(botName);
     int total = 0;
-    cout << "Total votes for bot: " << botName << " is: " 
+    cout << "\n\t" << botName << " received a total of "
         << accumulate(iterBotName->second.begin(), 
-            iterBotName->second.end(), total) << endl;
+            iterBotName->second.end(), total) << " vote(s)." << endl;
 }
 
 void Election::printWinner() const
@@ -79,28 +80,43 @@ void Election::printWinner() const
         }
         currentTotal = 0;
     }
-    cout << "Winner is: " << currentName << " with " 
-        << finalTotal << " votes." << endl;
+    cout << "\n\tWinner: " << currentName << " with " 
+        << finalTotal << " vote(s)." << endl;
 }
 
 void Election::printFinalResults() const
 {
+    cout << "\n\tBot\t       ";
+
+    for (auto& i : CLUB_ABBREVIATIONS)
+    {
+        cout << i << " ";
+    }
+
+    cout << "  Total" << endl << "\t" << string(52, '*') << endl;
+
     for (auto& i : electoralVotes)
     {
-        cout << "Name: " << i.first
-            << " | Club-by-club votes: ";
+        cout << "\t" << i.first
+            << "\t";
         for (auto& j : i.second)
         {
-            cout << j << " ";
+            cout << j << "  ";
         }
 
-        cout << "| Total votes: ";
+        cout << "\t";
         int totalVotes = accumulate(i.second.begin(), i.second.end(), 0);
-        cout << totalVotes << endl;
+        cout << "  " << totalVotes << endl;
     }
 }
 
 void Election::printAllClubs() const
 {
+    cout << "\n\tCLUB\t (abbreviation)" << endl << "\t" << string(23, '-') << endl;
 
+    for (int i = 0; i < 10; ++i)
+    {
+        cout << "\t" << setw(9) << left << clubs[i] 
+            << "(" << CLUB_ABBREVIATIONS[i] << ")" << endl;
+    }
 }
