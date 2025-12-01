@@ -151,13 +151,24 @@ void processMenu(const BotList& botList, const Election& election)
 					}
 					break;
 				}
-			system("Pause");
+			
 		}
+		
 		if (option == 7)
 		{
 			exitMessage();
 			sentinelVal = 0;
 		}
+		else
+		{
+			cout << endl;
+			system("Pause");
+
+			cout << endl;
+			displayMenu();
+		}
+
+		
 		
 	}
 }
