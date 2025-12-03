@@ -56,6 +56,7 @@ void Election::printBotTotalVotes(const string& botName) const
 {
     auto iterBotName = electoralVotes.find(botName);
     int total = 0;
+
     cout << "\n\t" << botName << " received a total of "
         << accumulate(iterBotName->second.begin(), 
             iterBotName->second.end(), total) << " vote(s)." << endl;
@@ -95,14 +96,15 @@ void Election::printFinalResults() const
     {
         cout << "\t" << i.first
             << "\t";
+
         for (auto& j : i.second)
         {
             cout << j << "  ";
         }
 
-        cout << "\t";
         int totalVotes = accumulate(i.second.begin(), i.second.end(), 0);
-        cout << "  " << totalVotes << endl;
+
+        cout << "\t" << "  " << totalVotes << endl;
     }
 }
 

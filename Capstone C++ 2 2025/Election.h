@@ -15,7 +15,6 @@
 #include <string>
 
 const int NUM_CLUBS = 10;
-
 const std::vector<std::string> CLUB_ABBREVIATIONS =
     { "NL", "RG", "EC", "AE", "CH", "NC", "AX", "BL", "CY", "DL" };
 
@@ -40,5 +39,4 @@ private:
     std::vector<std::string> clubs;
     std::map<std::string, std::vector<int>> electoralVotes;
 };
-
 #endif

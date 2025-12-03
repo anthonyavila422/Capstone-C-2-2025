@@ -29,6 +29,7 @@ bool BotList::getBotByName(const string& name, BotType& outBot) const
     BotType tempBot(name, "", "");
 
     auto iterBotFound = botList.find(tempBot);
+
     if (iterBotFound != botList.end())
     {
         outBot = tempBot;
@@ -47,7 +48,8 @@ void BotList::printAllBotsNames() const
 {
     for (auto& i : botList)
     {
-        cout << i.getBotName() << endl;
+        i.printBotName();
+        cout << endl;
     }
 }
 
