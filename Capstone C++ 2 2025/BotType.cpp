@@ -35,9 +35,9 @@ void BotType::printBotName() const
 
 void BotType::printBotInfo() const
 {
-    cout << "Bot name is: " << name << endl;
-    cout << "Bot ability is: " << ability << endl;
-    cout << "Bot trait is: " << trait << endl;
+    cout << "Bot name is: " << name << endl
+        << "Bot ability is: " << ability << endl
+        << "Bot trait is: " << trait << endl;
 }
 
 bool BotType::operator < (const BotType& otherBot) const

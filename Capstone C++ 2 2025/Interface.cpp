@@ -7,26 +7,20 @@
 	Bot Elections
 */
 
-
 #include "Interface.h"
-
 
 #include <iostream>
 #include <string>
-#include <iomanip>
-
+//#include <iomanip>
 
 using namespace std;
 
-
-// Definition function displayMenu
 void displayMenu()
 {
 	cout << string(45, '*') << endl
 		<< "\t\tMAIN MENU" << endl
-		<< string(45, '*') << endl;
-
-	cout << "\nSelect one of the following:" << endl
+		<< string(45, '*') << endl
+		<< "\nSelect one of the following:" << endl
 		<< "\n\t1: Print all bots" << endl
 		<< "\t2: Print all clubs" << endl
 		<< "\t3: Print a bot's votes from a club" << endl
@@ -36,8 +30,6 @@ void displayMenu()
 		<< "\t7: To exit" << endl;
 }
 
-
-// Definition function exitMessage
 void exitMessage()
 {
 	cout << endl << string(45, '-') << endl
@@ -46,16 +38,12 @@ void exitMessage()
 		<< string(45, '-') << endl;
 }
 
-
-// Definition function noDataMessage
 void noDataMessage()
 {
 	cout << "\n\t*** No data is avilable." << endl
 		<< "\t*** Please contact the administrator." << endl;
 }
 
-
-// Definition function processMenu
 void processMenu(const BotList& botList, const Election& election)
 {
 	int sentinelVal = 1;
@@ -78,6 +66,7 @@ void processMenu(const BotList& botList, const Election& election)
 						botList.printAllBotsInfo();
 					}
 					break;
+
 				}
 			case 2:
 				{
@@ -90,6 +79,7 @@ void processMenu(const BotList& botList, const Election& election)
 						election.printAllClubs();
 					}
 					break;
+
 				}
 			case 3:
 				{
@@ -110,6 +100,7 @@ void processMenu(const BotList& botList, const Election& election)
 						election.printBotVotesFromClub(botName, clubName);
 					}
 					break;
+
 				}
 			case 4:
 				{
@@ -126,6 +117,7 @@ void processMenu(const BotList& botList, const Election& election)
 						election.printBotTotalVotes(botName);
 					}
 					break;
+
 				}
 			case 5:
 				{
@@ -138,6 +130,7 @@ void processMenu(const BotList& botList, const Election& election)
 						election.printWinner();
 					}
 					break;
+
 				}
 			case 6:
 				{
@@ -150,8 +143,8 @@ void processMenu(const BotList& botList, const Election& election)
 						election.printFinalResults();
 					}
 					break;
+
 				}
-			
 		}
 		
 		if (option == 7)
@@ -167,8 +160,5 @@ void processMenu(const BotList& botList, const Election& election)
 			cout << endl;
 			displayMenu();
 		}
-
-		
-		
 	}
 }

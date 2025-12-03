@@ -21,7 +21,7 @@ public:
     void insertBot(const BotType& theBot);
 
     int getCount() const;
-    bool getBotByName(std::string name, BotType& outBot) const;
+    bool getBotByName(const std::string& name, BotType& outBot) const;
 
     bool isEmpty() const;
 
@@ -30,5 +30,6 @@ public:
 
 private:
     std::set<BotType> botList;
+
 };
 #endif

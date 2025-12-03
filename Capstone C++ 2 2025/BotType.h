@@ -16,9 +16,9 @@ class BotType
 {
 public:
     BotType() : name(), ability(), trait() {}
-    BotType(std::string aName, std::string anAbility, std::string aTrait)
-        : name(aName), ability(anAbility), trait(aTrait) {
-    }
+    BotType(std::string botName, std::string botAbility, 
+        std::string botTrait)
+        : name(botName), ability(botAbility), trait(botTrait) {}
 
     std::string getBotName() const;
     std::string getBotAbility() const;

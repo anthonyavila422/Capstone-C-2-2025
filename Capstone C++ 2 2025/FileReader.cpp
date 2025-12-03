@@ -47,7 +47,6 @@ void readBotData(BotList& botList)
         }
         botDataFile.close();
     }
-
 }
 
 void readElectionResults(Election& electionResults)
@@ -74,6 +73,7 @@ void readElectionResults(Election& electionResults)
             clubNames.push_back(clubName);
             clubName = "";
         }
+
         electionResults.addClubs(clubNames);
 
         line = "";

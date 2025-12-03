@@ -10,6 +10,7 @@
 #include "BotList.h"
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ int BotList::getCount() const
     return static_cast<int>(botList.size());
 }
 
-bool BotList::getBotByName(string name, BotType& outBot) const
+bool BotList::getBotByName(const string& name, BotType& outBot) const
 {
     BotType tempBot(name, "", "");
 

@@ -14,20 +14,24 @@
 #include <map>
 #include <string>
 
-extern const int NUM_CLUBS;
-extern const std::vector<std::string> CLUB_ABBREVIATIONS;
+const int NUM_CLUBS = 10;
+
+const std::vector<std::string> CLUB_ABBREVIATIONS =
+    { "NL", "RG", "EC", "AE", "CH", "NC", "AX", "BL", "CY", "DL" };
 
 class Election
 {
 public:
-    void addClubs(std::vector<std::string>& theClubs);
-    void addBots(std::string botName, std::vector<int>& votesForBot);
+    void addClubs(const std::vector<std::string>& theClubs);
+    void addBots(const std::string& botName,
+        const std::vector<int>& votesForBot);
 
     bool noDataFound() const;
 
     void printAllBots() const;
-    void printBotVotesFromClub(std::string botName, std::string clubName) const;
-    void printBotTotalVotes(std::string botName) const;
+    void printBotVotesFromClub(const std::string& botName,
+        const std::string& clubName) const;
+    void printBotTotalVotes(const std::string& botName) const;
     void printWinner() const;
     void printFinalResults() const;
     void printAllClubs() const;

@@ -15,16 +15,12 @@
 
 using namespace std;
 
-const int NUM_CLUBS = 10;
-const vector<string> CLUB_ABBREVIATIONS = 
-    {"NL", "RG", "EC", "AE", "CH", "NC", "AX", "BL", "CY", "DL"};
-
-void Election::addClubs(vector<string>& theClubs)
+void Election::addClubs(const vector<string>& theClubs)
 {
     clubs = theClubs;
 }
 
-void Election::addBots(string botName, vector<int>& votesForBot)
+void Election::addBots(const string& botName,const vector<int>& votesForBot)
 {
     electoralVotes.insert({ botName, votesForBot });
 }
@@ -42,7 +38,7 @@ void Election::printAllBots() const
     }
 }
 
-void Election::printBotVotesFromClub(string botName, string clubName) const
+void Election::printBotVotesFromClub(const string& botName,const string& clubName) const
 {
     auto iterClubName = find(clubs.begin(), clubs.end(), clubName);
     auto iterBotName = electoralVotes.find(botName);
@@ -56,7 +52,7 @@ void Election::printBotVotesFromClub(string botName, string clubName) const
 
 }
 
-void Election::printBotTotalVotes(string botName) const
+void Election::printBotTotalVotes(const string& botName) const
 {
     auto iterBotName = electoralVotes.find(botName);
     int total = 0;
@@ -112,7 +108,8 @@ void Election::printFinalResults() const
 
 void Election::printAllClubs() const
 {
-    cout << "\n\tCLUB\t (abbreviation)" << endl << "\t" << string(23, '-') << endl;
+    cout << "\n\tCLUB\t (abbreviation)" << endl 
+        << "\t" << string(23, '-') << endl;
 
     for (int i = 0; i < 10; ++i)
     {
